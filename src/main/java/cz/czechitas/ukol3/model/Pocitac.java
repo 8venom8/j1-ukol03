@@ -90,9 +90,16 @@ public class Pocitac {
         //SMAŽ SOUBOR
 
     public void vymazSouboryOVelikosti(long velikost) {
+        if (!jeZapnuty) {
+            System.out.println("CHYBA: Nelze mazat soubory pokud je PC vypnutý");
+            return;
+        }
+
         if (pevnyDisk.getVyuziteMisto() - velikost >= 0) {
             System.out.println("Soubor byl smazán");
             pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);
+        } else {
+            System.out.println("CHYBA: Soubor nelze smazat");
         }
 
     }
