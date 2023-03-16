@@ -5,6 +5,7 @@ public class Pocitac {
     private Procesor cpu;
     private Pamet ram;
     private Disk pevnyDisk;
+
     
     public boolean isJeZapnuty() {
         return jeZapnuty;
@@ -70,6 +71,33 @@ public class Pocitac {
                     System.err.println("Počítač je už vypnutý");
                 }
             }
+
+
+
+            //METODY 2.ČÁST
+
+            //VYTVOŘ SOUBOR
+    public void vytvorSouborOVelikosti(long velikost) {
+        if (pevnyDisk.getVyuziteMisto() + velikost > pevnyDisk.getKapacita())
+            System.err.println("Kapacita je plná, soubor se nemůže uložit");
+        } else {
+        if (pevnyDisk.setVyuziteMisto() + velikost < pevnyDisk.getKapacita())
+            System.out.println("Soubor se ukládá");
+            pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() + velikost);
+        }
+    }
+
+        //SMAŽ SOUBOR
+
+    public void vymazSouboryOVelikosti(long velikost) {
+        if (pevnyDisk.getVyuziteMisto() - velikost >= 0) {
+            System.out.println("Soubor byl smazán");
+            pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);
+        }
+
+    }
+
+
 
 }
 
