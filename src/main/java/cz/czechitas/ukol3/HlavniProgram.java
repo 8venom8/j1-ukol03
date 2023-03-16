@@ -34,6 +34,8 @@ public class HlavniProgram {
         pocitacAcer.setRam(acerPamet);
         pocitacAcer.setPevnyDisk(acerDisk);
 
+        pocitacAcer.vytvorSouborOVelikosti(1000);
+
         System.out.println(pocitacAcer);
 
 

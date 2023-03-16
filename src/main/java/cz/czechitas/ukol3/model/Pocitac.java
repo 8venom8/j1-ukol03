@@ -6,15 +6,6 @@ public class Pocitac {
     private Pamet ram;
     private Disk pevnyDisk;
 
-    
-    public boolean isJeZapnuty() {
-        return jeZapnuty;
-    }
-
-    public void setJeZapnuty(boolean jeZapnuty) {
-        this.jeZapnuty = jeZapnuty;
-    }
-
     public Procesor getCpu() {
         return cpu;
     }
@@ -52,10 +43,10 @@ public class Pocitac {
 
     public void zapniSe() {
             if (jeZapnuty) {
-                System.err.println("Počítač je zapnutý, nelze zapnout dvakrát");
+                System.out.println("CHYBA: Počítač je zapnutý, nelze zapnout dvakrát");
             } else {
                 if (this.ram == null || this.cpu == null || this.pevnyDisk == null ) {
-                    System.err.println("Počítač se nezapne dokud nezadáte ram, cpu, pevnyDisk");
+                    System.out.println("CHYBA: Počítač se nezapne dokud nezadáte ram, cpu, pevnyDisk");
                 } else {
                     System.out.println("Počítač se zapíná");
                     jeZapnuty = true;
@@ -63,14 +54,12 @@ public class Pocitac {
             }
     }
 
-            public void vypniSe() {
-                if (jeZapnuty) {
-                    System.out.println("Počítač se vypíná");
-                    jeZapnuty = false;
-                } else {
-                    System.err.println("Počítač je už vypnutý");
-                }
-            }
+      public void vypniSe() {
+          if (jeZapnuty) {
+              System.out.println("Počítač se vypíná");
+              jeZapnuty = false;
+          }
+      }
 
 
 
@@ -78,10 +67,14 @@ public class Pocitac {
 
             //VYTVOŘ SOUBOR
     public void vytvorSouborOVelikosti(long velikost) {
-        if (pevnyDisk.getVyuziteMisto() + velikost > pevnyDisk.getKapacita())
-            System.err.println("Kapacita je plná, soubor se nemůže uložit");
+        if (!jeZapnuty) {
+            System.out.println("CHYBA: Nelze vytvářet soubory pokud je PC vypnutý");
+            return;
+        }
+
+        if (pevnyDisk.getVyuziteMisto() + velikost > pevnyDisk.getKapacita()) {
+            System.out.println("CHYBA: Kapacita je plná, soubor se nemůže uložit");
         } else {
-        if (pevnyDisk.setVyuziteMisto() + velikost < pevnyDisk.getKapacita())
             System.out.println("Soubor se ukládá");
             pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() + velikost);
         }
