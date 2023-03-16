@@ -1,6 +1,7 @@
 package cz.czechitas.ukol3;
 
 import cz.czechitas.ukol3.model.Disk;
+import cz.czechitas.ukol3.model.Pamet;
 import cz.czechitas.ukol3.model.Pocitac;
 import cz.czechitas.ukol3.model.Procesor;
 
@@ -16,15 +17,26 @@ public class HlavniProgram {
 
 
         Pocitac pocitacAcer = new Pocitac();
-        //pocitacAcer.setCpu();
-        //pocitacAcer.setRam();
-        //pocitacAcer.setPevnyDisk();
-        //System.out.println(pocitacAcer.toString());
 
-        //pocitacAcer.zapniSe();
 
         Disk acerDisk = new Disk();
-        acerDisk.setKapacita(475_000_000L);
+        acerDisk.setKapacita(475_000_000L);//bajt
+        acerDisk.setVyuziteMisto(107_000_000L);//bajt
+
+        Pamet acerPamet = new Pamet();
+        acerPamet.setKapacita(8_000_000L);//bajt
+
+        Procesor acerProcesor = new Procesor();
+        acerProcesor.setRychlost(24_000_000_000L);//Hz
+        acerProcesor.setVyrobce("Intel(R) Core(TM)");
+
+        pocitacAcer.setCpu(acerProcesor);
+        pocitacAcer.setRam(acerPamet);
+        pocitacAcer.setPevnyDisk(acerDisk);
+
+        System.out.println(pocitacAcer);
+
+
 
 
 

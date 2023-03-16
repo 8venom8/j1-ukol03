@@ -21,8 +21,8 @@ public class Disk {
         this.vyuziteMisto = vyuziteMisto;
     }
 
-    public String toString() {
     @Override
-        return "Disk: " + "kapacita: " + kapacita + ", vyuziteMisto: " + vyuziteMisto;
+    public String toString() {
+        return "Disk= " + "kapacita: " + kapacita + " bajtu" + ", vyuzite misto: " + vyuziteMisto + " bajtu " ;
     }
 }

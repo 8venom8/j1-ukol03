@@ -40,7 +40,7 @@ public class Pocitac {
 
     @Override
     public String toString() {
-        return "Počítač= cpu: " + cpu + ", ram: " + ram + ", pevny disk: " + pevnyDisk;
+        return "Počítač Acer AspireA715-75G....." + cpu + ram  + pevnyDisk;
     }
 
 
