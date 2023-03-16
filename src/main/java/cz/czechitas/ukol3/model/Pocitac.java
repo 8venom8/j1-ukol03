@@ -92,7 +92,7 @@ public class Pocitac {
             System.out.println("Soubor byl smazán");
             pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto() - velikost);
         } else {
-            System.out.println("CHYBA: Soubor nelze smazat");
+            System.out.println("CHYBA: Soubor nelze smazat, nelze jít do mínusu");
         }
 
     }

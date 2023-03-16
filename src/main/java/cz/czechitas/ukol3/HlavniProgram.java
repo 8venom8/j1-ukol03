@@ -34,7 +34,31 @@ public class HlavniProgram {
         pocitacAcer.setRam(acerPamet);
         pocitacAcer.setPevnyDisk(acerDisk);
 
-        pocitacAcer.vytvorSouborOVelikosti(1000);
+
+ //ZKOUSKA FUNKCNOSTI
+
+//TEST-1.)
+        //pocitacAcer.zapniSe();
+        //pocitacAcer.vypniSe();//>>>Pocítac se vypíná
+
+//TEST-2.)
+        //pocitacAcer.vymazSouboryOVelikosti(845_000_000); //>>>CHYBA nelze mazat pokud je pc vypnutý
+
+//TEST-3.)
+        //pocitacAcer.zapniSe();
+        //pocitacAcer.vymazSouboryOVelikosti(845_000_000); //>>>CHYBA nelze jít do mínusu s mazáním souboru
+
+//TEST-4.)
+        //pocitacAcer.zapniSe();
+        //pocitacAcer.vytvorSouborOVelikosti(45_000_000); //>>>soubor se ukláda
+
+//TEST-5.)
+        //pocitacAcer.vytvorSouborOVelikosti(1000); //>>>CHYBA pocitac neni zapnutý, nezlze vytvářet soubory
+
+//TEST-6.)
+        //pocitacAcer.zapniSe();
+        //pocitacAcer.vymazSouboryOVelikosti(45_000); //>>>Soubor byl smazán
+
 
         System.out.println(pocitacAcer);
 
