@@ -40,9 +40,40 @@ public class Pocitac {
 
     @Override
     public String toString() {
-        return "cpu: " + cpu + ", ram: " + ram + ", pevny disk: " + pevnyDisk;
+        return "Počítač= cpu: " + cpu + ", ram: " + ram + ", pevny disk: " + pevnyDisk;
     }
 
 
 
+    public boolean jeZapnuty() {
+            return jeZapnuty;
+    }
+
+    public void zapniSe() {
+            if (jeZapnuty) {
+                System.err.println("Počítač je zapnutý, nelze zapnout dvakrát");
+            } else {
+                if (this.ram == null || this.cpu == null || this.pevnyDisk == null ) {
+                    System.err.println("Počítač se nezapne dokud nezadáte ram, cpu, pevnyDisk");
+                } else {
+                    System.out.println("Počítač se zapíná");
+                    jeZapnuty = true;
+                }
+            }
+    }
+
+            public void vypniSe() {
+                if (jeZapnuty) {
+                    System.out.println("Počítač se vypíná");
+                    jeZapnuty = false;
+                } else {
+                    System.err.println("Počítač je už vypnutý");
+                }
+            }
+
 }
+
+
+
+
+

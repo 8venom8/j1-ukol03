@@ -1,5 +1,6 @@
 package cz.czechitas.ukol3;
 
+import cz.czechitas.ukol3.model.Disk;
 import cz.czechitas.ukol3.model.Pocitac;
 import cz.czechitas.ukol3.model.Procesor;
 
@@ -13,10 +14,18 @@ public class HlavniProgram {
         //TODO tady bude váš kód - vytvoření instance třídy Pocitac, zapnutí, vpynutí, výpis hodnot.
         System.out.println("Program spuštěn.");
 
-        Pocitac pocitacAcer = new Pocitac ();
-        pocitacAcer.setCpu();
-        pocitacAcer.setRam();
-        pocitacAcer.setPevnyDisk();
+
+        Pocitac pocitacAcer = new Pocitac();
+        //pocitacAcer.setCpu();
+        //pocitacAcer.setRam();
+        //pocitacAcer.setPevnyDisk();
+        //System.out.println(pocitacAcer.toString());
+
+        //pocitacAcer.zapniSe();
+
+        Disk acerDisk = new Disk();
+        acerDisk.setKapacita(475_000_000L);
+
 
 
     }
